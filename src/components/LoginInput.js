@@ -53,9 +53,6 @@ class LoginInput extends Component {
           <div className="error-message">
             {errorMessage}
           </div>
-          <div>
-            <p>Note to Spanning code reviewer: use pin 1111, 1234, or 4444. </p>
-          </div>
       </div>
     );
   }
