@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import { Link, browserHistory } from 'react-router';
-import * as accountActions from '../actions/account';
+import * as actions from '../actions';
 
 import Balance from '../components/Balance';
 import Deposit from '../components/Deposit';
@@ -50,7 +50,8 @@ class Dashboard extends Component {
   }
 
   signout() {
-    this.setState({display: 'signout'});
+    this.props.actions.logout();
+    browserHistory.push('/logout');
   }
 
   renderMainMenu() {
@@ -99,19 +100,6 @@ class Dashboard extends Component {
           </div>
         );
 
-
-      case "signout":
-        return (
-          <div className="dashboard">
-            <Logout />
-            <Link to={"/login"}>
-              <button className="go">
-                Login
-              </button>
-            </Link>
-          </div>
-        );
-
       default: 
         return this.renderMainMenu();
     }
@@ -131,7 +119,7 @@ function mapStateToProps(state, props) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(accountActions, dispatch)
+    actions: bindActionCreators(actions, dispatch)
   }
 }
 

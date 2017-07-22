@@ -41,5 +41,8 @@ export const logout = function logout() {
 		dispatch({
 			type: 'LOGOUT_REQUESTED'
 		});
+    dispatch({
+      type: "RESET_ACCOUNT"
+    });
 	}
 }
