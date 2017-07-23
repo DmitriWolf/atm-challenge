@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const Vault = function Vault () {
+export const Vault = (function Vault () {
     var accounts = [
       {
         pin: '1234',
@@ -38,6 +38,4 @@ const Vault = function Vault () {
     }
 
     return vaultModule;
-  };
-  
-  export default Vault;
+  })();

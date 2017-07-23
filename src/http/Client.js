@@ -1,8 +1,7 @@
-import Vault from './Vault';
+import {Vault} from './Vault';
 
 export const Client = (function Client () {
-  var vault = new Vault();
-  var teller = new vault();
+  var teller = new Vault();
 
   var clientModule = {};
   clientModule.request = function (data, method) {
