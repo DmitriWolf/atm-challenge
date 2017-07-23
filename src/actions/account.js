@@ -1,5 +1,4 @@
 import {Client} from '../http/Client';
-var client = new Client();
 
 export const setAccount = function setAccount(pin, balance) {
 	return (dispatch) => {
@@ -35,7 +34,7 @@ export const makeDeposit = function makeDeposit(pin, amount) {
 			type: 'TRANSACTION_BEGUN'
 		});
 
-	  client.request({
+	  Client.request({
 	    	pin,
 	    	amount
 	    }, "PUT")

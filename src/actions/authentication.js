@@ -1,6 +1,5 @@
 import {Client} from '../http/Client';
 import {browserHistory} from 'react-router';
-var client = new Client();
 
 export const login = function login(pin) {
 	return (dispatch) => {
@@ -9,7 +8,7 @@ export const login = function login(pin) {
 			payload: pin
 		});
 
-    client.request({pin}, "GET")
+    Client.request({pin}, "GET")
       .then((response) => {
         if(response) {
            dispatch({
